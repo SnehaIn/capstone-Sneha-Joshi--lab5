@@ -1,0 +1,341 @@
+:root {
+  --clr-primary: #ff4b3a;
+  --clr-primary-dark: #e03929;
+  --clr-bg: #fff7f2;
+  --clr-surface: #ffffff;
+  --clr-text: #222222;
+  --clr-muted: #666666;
+  --radius-lg: 1.25rem;
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --transition-fast: 0.25s ease;
+  --max-width: 1100px;
+  --spacing-section: 4rem;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+  line-height: 1.5;
+}
+
+/* Layout container */
+main,
+.site-header,
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-inline: 1.25rem;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.logo span {
+  color: var(--clr-primary);
+}
+
+.main-nav a {
+  margin-left: 1.25rem;
+  text-decoration: none;
+  color: var(--clr-text);
+  font-weight: 500;
+}
+.main-nav a:hover {
+  color: var(--clr-primary);
+}
+
+/* Generic section spacing */
+.section {
+  padding-block: var(--spacing-section);
+}
+
+.section-header h2 {
+  margin-bottom: 0.3rem;
+}
+
+.section-header p {
+  color: var(--clr-muted);
+  max-width: 40rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn.primary {
+  background-color: var(--clr-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+.btn.primary:hover {
+  background-color: var(--clr-primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+}
+.btn.secondary:hover {
+  background-color: #ffe6df;
+}
+
+.btn.small {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* HERO SECTION DESIGN */
+.hero {
+  padding-block: var(--spacing-section);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.1rem, 3vw + 1.5rem, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+.hero-text p {
+  color: var(--clr-muted);
+  max-width: 30rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+/* CATEGORY CHIPS */
+.category-filters {
+  margin-top: 1.75rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chip {
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+.chip:hover {
+  border-color: var(--clr-primary);
+}
+.chip-active {
+  background-color: var(--clr-primary);
+  color: #ffffff;
+  border-color: var(--clr-primary);
+}
+
+/* CARD GRID LAYOUT */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: 1rem;
+}
+
+.food-card {
+  background-color: var(--clr-surface);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.food-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.food-content {
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.food-content h3 {
+  margin: 0 0 0.3rem;
+}
+
+.food-content p {
+  margin: 0 0 0.8rem;
+  color: var(--clr-muted);
+  font-size: 0.9rem;
+}
+
+.food-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--clr-primary-dark);
+}
+
+/* FOOTER */
+.site-footer {
+  padding-block: 1.5rem;
+  text-align: center;
+  color: var(--clr-muted);
+  font-size: 0.9rem;
+}
+/* Deals section small tweak (optional) */
+.deals-section .card-grid {
+  margin-top: 1.5rem;
+}
+
+/* Contact section layout */
+.contact-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+}
+
+.contact-form {
+  background-color: var(--clr-surface);
+  padding: 1.75rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid #ddd;
+  font: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 2px rgba(255, 75, 58, 0.15);
+}
+
+.contact-info {
+  align-self: start;
+  padding: 0.5rem 0;
+  color: var(--clr-muted);
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--clr-text);
+}
+
+/* Make contact layout stack on smaller screens */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-image {
+    order: -1; /* image on top for mobile, optional */
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    display: none; /* later you can replace with mobile nav if you want */
+  }
+
+  .site-header {
+    justify-content: space-between;
+  }
+}
