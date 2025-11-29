@@ -78,4 +78,4 @@ The site is responsive using CSS media queries:
 
 If GitHub Pages is enabled for this repo:
 
-- **Live demo:** ` `
+- **Live demo:** `https://github.com/SnehaIn/capstone-Sneha-Joshi--lab5 `
